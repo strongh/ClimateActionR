@@ -44,15 +44,17 @@ for(i in 1:nrow(cr.sites)){
   download.file(cr.sites$FTP[i],tf,mode="wb")
   dat.list[[i]]<-read.csv(unz(tf,filename=paste0("cmip5_ncar_mon/",cr.sites$file.name[i])))
   dat.list[[i]]$Station<-as.character(cr.sites$site.abb[i])
+  dat.list[[i]]$lat<-cr.sites$lat[i]
+  dat.list[[i]]$long<-cr.sites$long[i]
   unlink(tf)
 }
 
 # Prepare data for output to a single csv file
 output.df<-plyr::ldply(dat.list) %>%
   gather(GCM.string,streamflow,access1.0_rcp45_r1i1p1:noresm1.m_rcp85_r1i1p1) %>%
-  separate(GCM.string,c("GCM","Scenario","excess"),sep="_",remove=F) %>%
+  separate(GCM.string,c("GCM","Scenario","excess"),sep="_",remove=T) %>%
   select(-excess)
 
 write.csv(output.df,"CMIP5_streamflow.csv")
 drop_upload("CMIP5_streamflow.csv",dest="ClimateActionRData")
-
+unlink("CMIP5_streamflow.csv")
