@@ -32,3 +32,10 @@ File names end in `*.R'.
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | GAP_landcover_CA.img | USGS GAP vegetation cover of California | Raster | Aerial image analysis | 1999-2001 | N/A | California | 30 m | http://gapanalysis.usgs.gov/gaplandcover/data/ |
+
+# Utility data
+
+| Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution $
+| -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ $
+| co.ca.wd.{ext} | Boundaries of Colorado River-using water districts in California | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://datahub.io/dataset/california-water-district-boundaries |
+
