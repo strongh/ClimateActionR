@@ -4,9 +4,22 @@
 + `lat` - latitude
 + `lon` - longitude
 
+# Spatial conventions
++ latitude: 31 to 42
++ longitude: -124 to -104
++ R bounding box object `list(minLat=31, maxLat=42, minLon=-124, maxLon=-104)`
++ see `ClimateAction` R package for function to perform subsetting to region of interest.
++ coordinate system: `+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs`
+
 # R conventions
 File names end in `*.R'.
 
+# Install R package
+The `ClimateAction` R package can be installed using the following command (requires `devtools` to be installed).
+
+```r
+devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
+```
 
 # Data domains
 
