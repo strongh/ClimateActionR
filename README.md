@@ -51,7 +51,9 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 
 # Utility data
 
-| Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution |
-| -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ |
-| co.ca.wd.{ext} | Boundaries of Colorado River-using water districts in California | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://datahub.io/dataset/california-water-district-boundaries |
-
+| Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
+| -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
+| co.ca.wd.{shp} | Boundaries of Colorado River-using water districts in California | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://datahub.io/dataset/california-water-district-boundaries |
+| CRB_boundary_full.{shp} | Boundary of Colorado River Basin | Shapefile | Administrative | N/A | N/A | N/A | N/A | http://www.nohrsc.noaa.gov/gisdatasets/ |
+| CRB_boundary_upper.{shp} | Boundary of Upper Colorado River Basin | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://www.sciencebase.gov/catalog/item/4f4e4a38e4b07f02db61cebb |
+| CRB_boundary_lower.{shp} | Boundary of Lower Colorado River Basin | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://nccwsc.usgs.gov/display-project/5050cb0ee4b0be20bb30eac0/50a64d73e4b0d446a665ca7c |
