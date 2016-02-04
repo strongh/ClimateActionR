@@ -26,6 +26,7 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 ## Climate
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
+| PRISM_temperature_normals.csv | Spatial temperature norms | Raster | PRISM | 1981-2010 | monthly | SW USA over | 4km grid squares | http://www.prism.oregonstate.edu/normals/ |
 
 ## Hydrology
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
