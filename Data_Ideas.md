@@ -18,6 +18,7 @@ http://www3.inegi.org.mx/sistemas/mexicocifras/default.aspx?e=26 -- Sonora, MX (
 * Precipitation: http://www.nasa.gov/mission_pages/GPM/main/
 * Lower Colorado historical stream flow: http://www.usbr.gov/lc/region/g4000/PubStreamFlow/index.html
 * Historical reservoir levels (several other reservoirs are available): http://www.usbr.gov/lc/region/g4000/hourly/moh-elv.html
+* USGS Tools for calcualting hydrologic indicators https://github.com/USGS-R/EflowStats
 
 # Energy
 * Hydrolectric production: http://www.energyalmanac.ca.gov/renewables/hydro/
