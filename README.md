@@ -48,6 +48,7 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 | GAP_landcover_CA.img | USGS GAP vegetation cover of California | Raster | Aerial image analysis | 1999-2001 | N/A | California | 30 m | http://gapanalysis.usgs.gov/gaplandcover/data/ |
 | irrigated_area.csv | USGS water use irrigated land by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
 | water_withdrawals.csv | USGS water use by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
+| CA_crops_{YYYY}.tif | USDA crop cover | Raster | Aerial image analysis | 2007-2014 | Annual | California | 30 m | https://catalog.data.gov/dataset/cropscape-cropland-data-layer |
 
 # Utility data
 
