@@ -51,7 +51,9 @@ shiny_viewer <- function() {
       output$map <- renderPlot({
         df <- drop_read_csv(input$dataset)
         if(all(c("lon", "lat") %in% names(df)))
-          ggplot(df, aes(lon, lat)) + geom_raster(aes_string(fill=names(df)[ncol(df)]))
+          ggplot(df, aes(lon, lat)) +
+            geom_raster(aes_string(fill=names(df)[ncol(df)])) +
+            coord_equal(ratio=1)
       })
       output$example.code <- renderText({
         paste0("R> ", "drop_read_csv(\"", input$dataset, "\")")
