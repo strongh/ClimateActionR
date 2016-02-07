@@ -33,7 +33,7 @@ shiny_viewer <- function() {
                       tabPanel("Table",
                                dataTableOutput("table")),
                       tabPanel("Map",
-                               dataTableOutput("map"))
+                               plotOutput("map"))
                       
           )   )
       )
@@ -49,12 +49,12 @@ shiny_viewer <- function() {
           ggplot(df, aes_string("year", names(df)[-ncol(df)])) + geom_line()
       })
       output$map <- renderPlot({
-        df <- drop_read_csv(input$dataset) %>% filter(state=="California")
-        if(all(c("lon", "lat") %in% names(sw.usa.df)))
+        df <- drop_read_csv(input$dataset)
+        if(all(c("lon", "lat") %in% names(df)))
           ggplot(df, aes(lon, lat)) + geom_raster(aes_string(fill=names(df)[ncol(df)]))
       })
       output$example.code <- renderText({
-        paste0("R> ", "drop_read_csv(", input$dataset, ")")
+        paste0("R> ", "drop_read_csv(\"", input$dataset, "\")")
       })
     }
   )
