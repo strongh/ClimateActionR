@@ -33,6 +33,7 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | CMIP5_streamflow.csv | Colorado River stream flow projections under multiple climate models/scenarios | Table | Model | 1950-2099 | Monthly | 9 georeferenced stations | N/A | http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/ |
 | paleo_streamflow.csv | Colorado River stream flow reconstructions from distant past | Table | Tree ring analysis | varies by site, >400 years | Annual | 7 georeferenced stations | N/A | http://treeflow.info/ |
+| historic_streamflow.csv | Colorado River stream flow from recent past | Table | Stream gauges | 1906-2012 | Monthly | 9 stations | N/A | http://www.usbr.gov/lc/region/g4000/NaturalFlow/current.html |
 
 ## Ecology
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
