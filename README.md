@@ -60,3 +60,5 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 | CRBasin_full.{shp} | Boundary of Colorado River Basin | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://www.sciencebase.gov/catalog/item/4fb697b2e4b03ad19d64b47f |
 | CRBasin_upper.{shp} | Boundary of Upper Colorado River Basin | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://www.sciencebase.gov/catalog/item/4fb697b2e4b03ad19d64b47f |
 | CRBasin_lower.{shp} | Boundary of Lower Colorado River Basin | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://www.sciencebase.gov/catalog/item/4fb697b2e4b03ad19d64b47f |
+| state_boundaries.{shp} | Boundaries of US states | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://www.census.gov/geo/maps-data/data/tiger-line.html |
+| county_boundaries.{shp} | Boundaries of US counties and equivalents | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://www.census.gov/geo/maps-data/data/tiger-line.html |
