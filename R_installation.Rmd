@@ -18,7 +18,7 @@ R> install.packages("PackageName", dependencies = TRUE)
 
 * Method 2: On RStudio's taskbar, click on "Tools" and then "Install Packages..." Afterwards, put down the name of the package(s) you wish to install and click install.
 
-Before the workshop begins, please install the following packages: ggplot2. See below for example command.
+**Before the workshop begins, please install the following packages: ggplot2, raster, dplyr, shiny. See below for example command.**
 
 ```
 R> install.packages("ggplot2", dependencies = TRUE)
