@@ -1,6 +1,15 @@
 # CAT Data Science Workshop Schedule
 
+# Pre-workshop technical office hour (optional)
+**Friday March 11, 12-1pm**
+
+**Location: BioSci III room 3120**
+
+If you have never used R and RStudio, please come to our pre-workshop office hour.  Will and Homer will be there to assist with installation of these two programs.
+
 # Day 1 -- Monday March 14
+**Location: [Graduate Resource Center event room][GRC]**
+
 | Time | Module | Presenter(s) |
 | :--------- | :--------------------------------------------------------------- | :------------------------- |
 | 9:00-9:30 | Welcome and introduction to the workshop | Steve Allison |
@@ -16,6 +25,8 @@
 | 5:00 | Adjorn | |
 
 # Day 2 -- Tuesday March 15
+**Location: [Graduate Resource Center event room][GRC]**
+
 | Time | Module | Presenter(s) |
 | :--------- | :--------------------------------------------------------------- | :------------------------- |
 | 9:00-10:00 | Water security in Southern California + discussion | Dave Feldman |
@@ -27,8 +38,12 @@
 | 5:00 | Adjorn | |
 
 # Day 3 -- Wednesday March 16
+**Location: [Graduate Resource Center event room][GRC]**
+
 | Time | Module | Presenter(s) |
 | :--------- | :--------------------------------------------------------------- | :------------------------- |
 | 9:00-10:00 | Project work time | |
 | 10:00-12:00 | Group demos of Shiny app products | |
 | 12:00 | Closing remarks + adjorn | |
+
+[GRC]: http://www.grad.uci.edu/_assets/pdfs/GRC%20Map%20-%20Gateway%20Study%20Center.pdf "Map to Graduate Resource Center"
