@@ -1,19 +1,26 @@
 library(shiny)
 library(ggplot2)
+library(magrittr)
+library(plyr)
+library(dplyr)
 
 # Define server logic required to draw a histogram
-#flow_data <- read.csv("~/code/ClimateActionR/CMIP5_streamflow.csv") 
+## flow_data <- read.csv("~/code/ClimateActionR/CMIP5_streamflow.csv") 
 
 ## coords of southernmost station. not sure this is 
 ## the right one
 south_station_coords <- c("-114.470", "32.880")
 
 ## need to figure out how to coordinate these summary calcs
-## station_flows <- flow_data %>%
-##  filter(lat < 33, Scenario=="rcp26", GCM=="bcc.csm1.1")
+##station_flows <- flow_data %>%
+##  filter(lat < 33, GCM=="bcc.csm1.1")
 ## station_flows <- read.csv("~/code/ClimateActionR/flow_data.csv")
-## station_yearly_flows <- ddply(station_flows, .(Year), summarise, streamflow=sum(streamflow))
-station_yearly_flows <- read.csv("~/code/ClimateActionR/yearly_flow.csv")
+#station_yearly_flows <- ddply(station_flows, .(Year, Scenario), summarise, streamflow=sum(streamflow))
+#mean_flow <- ddply(station_yearly_flows, .(Year), summarise,
+#                   Scenario="mean",
+#                   streamflow=mean(streamflow))
+#station_yearly_flows <- rbind(station_yearly_flows, mean_flow)
+station_yearly_flows <- read.csv("~/code/ClimateActionR/yearly_flow_scenario.csv")
 station.coords <- read.csv("~/code/ClimateActionR/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
 #states <- geom_shape("admin_boundaries", "state_boundaries")
@@ -24,7 +31,10 @@ shinyServer(function(input, output) {
     store.rate <- input$damStorageRate
     damSize <- input$damSize
     pad <- input$generous
-    inflow <- station_yearly_flows$streamflow 
+    inflow <- station_yearly_flows %>% 
+      filter(Scenario==input$scenario) %>%
+      select(streamflow) %>% .[[1]]
+
     N <- length(inflow)
     ## calculate outflow at each time point
     outflow <- c(0)
@@ -61,22 +71,28 @@ shinyServer(function(input, output) {
   
   output$waterTreatySummary <- renderText({
     mexico.flow <- mexicoWaterReactive()
-    N <- nrow(station_yearly_flows )
+    N <- nrow(station_yearly_flows)
     prop.years.fail <- sum(mexico.flow < mexico.use)/N
     sprintf("In %.2f%% of years between 1950 and 2100, there is
             not enough water
-            remaining for Mexio.", 
+            remaining for Mexio.",
             prop.years.fail * 100)
   })
   
   output$flowTimeSeriesPlot <- renderPlot({
-    ggplot(station_yearly_flows, aes(Year, streamflow)) + 
-      geom_line()
+    scenario_subset <- station_yearly_flows %>%
+      filter(Scenario==input$scenario)
+    ggplot(station_yearly_flows,
+           aes(Year, streamflow)) + 
+           geom_line(data=scenario_subset, size=3, alpha=0.2) +
+           geom_line(aes(colour=Scenario))
   })
   
   output$mexicoFlowTimeSeriesPlot <- renderPlot({
     station_yearly_flows$outflow <- mexicoWaterReactive()
-    ggplot(station_yearly_flows, aes(Year, outflow)) + 
+    scenario <- input$scenario
+    ggplot(station_yearly_flows %>% filter(Scenario==scenario), 
+           aes(Year, outflow)) + 
       geom_line() + 
       geom_point(aes(colour=outflow>=mexico.use)) +
       geom_hline(yintercept = mexico.use)
