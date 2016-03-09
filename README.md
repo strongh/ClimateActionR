@@ -26,7 +26,8 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 ## Climate
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
-| PRISM_temperature_normals.csv | Spatial temperature norms | Raster | PRISM | 1981-2010 | monthly | SW USA over | 4km grid squares | http://www.prism.oregonstate.edu/normals/ |
+| PRISM_temperature_normals.csv | Spatial temperature norms | Raster | PRISM | 1981-2010 | monthly | SW USA  | 4km grid squares | http://www.prism.oregonstate.edu/normals/ |
+| normal_min_temperatures.csv | Mean min temperatures, plus USDA hardiness zones | Raster | PRISM | 1981-2010 | N/A | contiguous USA | 4km grid squares | http://www.prism.oregonstate.edu/normals/ |
 
 ## Hydrology
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
@@ -48,6 +49,7 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 | irrigated_area.csv | USGS water use irrigated land by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
 | water_withdrawals.csv | USGS water use by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
 | CA_crops_{YYYY}.tif | USDA crop cover | Raster | Aerial image analysis | 2007-2014 | Annual | California | 30 m | https://catalog.data.gov/dataset/cropscape-cropland-data-layer |
+| usda_plants.csv | USDA PLANTS | Tabular | N/A | N/A | N/A | SW USA | N/A | http://plants.usda.gov/adv_search.html |
 
 # Utility data
 
