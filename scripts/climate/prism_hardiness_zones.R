@@ -10,6 +10,7 @@ library(magrittr)
 library(reshape2)
 library(raster)
 library(prism)
+library(rdrop2)
 #library(ClimateAction)
 
 options(prism.path = "~/data/prism")
@@ -38,6 +39,5 @@ df$zone_round <- floor(df$zone)
 
 write.csv(df, output.file.name)
 
-##sw.usa.df <- bounding.box.filter(df)
-##write.csv(sw.usa.df, output.file.name)
-##drop_upload(output.file.name, dest = "ClimateActionRData")
+
+drop_upload(output.file.name, dest = "ClimateActionRData")
