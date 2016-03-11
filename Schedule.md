@@ -7,6 +7,8 @@
 
 If you have never used R and RStudio, please come to our pre-workshop office hour.  Will and Homer will be there to assist with installation of these two programs.
 
+Please follow the installation instructions posted here: https://github.com/strongh/ClimateActionR/blob/master/R_installation.Rmd
+
 # Day 1 -- Monday March 14
 **Location: [Graduate Resource Center event room][GRC]**
 
