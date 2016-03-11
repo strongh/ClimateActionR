@@ -1,5 +1,9 @@
 # CAT Data Science Workshop Schedule
 
+# Please bring:
+* your computer with R installed (see below) and your powercord
+* a water bottle (to cut down on packaging waste, drinks won't be provided with lunch)
+
 # Pre-workshop technical office hour (optional)
 **Friday March 11, 12-1pm**
 
