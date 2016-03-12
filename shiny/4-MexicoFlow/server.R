@@ -1,12 +1,10 @@
 library(shiny)
 library(ggplot2)
 library(magrittr)
-library(plyr)
 library(dplyr)
 
 ## TODO:
 ## + make sure apps run from scratch
-## + break out data preparation script(s)
 ## + point out how to explain w/ prose
 ## + improve graph labels
 ## + plug in actual numbers?
@@ -16,24 +14,12 @@ library(dplyr)
 ## + bug in years reported?
 ## + "pad" should be more emphasized / radio buttons
 ## + states polygon
+## + version 5: long-term vs short term
+
+## DONE:
+## + break out data preparation script(s)
 
 
-# Define server logic required to draw a histogram
-## flow_data <- read.csv("~/code/ClimateActionR/CMIP5_streamflow.csv") 
-
-## coords of southernmost station. not sure this is 
-## the right one
-south_station_coords <- c("-114.470", "32.880")
-
-## need to figure out how to coordinate these summary calcs
-##station_flows <- flow_data %>%
-##  filter(lat < 33, GCM=="bcc.csm1.1")
-## station_flows <- read.csv("~/code/ClimateActionR/flow_data.csv")
-#station_yearly_flows <- ddply(station_flows, .(Year, Scenario), summarise, streamflow=sum(streamflow))
-#mean_flow <- ddply(station_yearly_flows, .(Year), summarise,
-#                   Scenario="mean",
-#                   streamflow=mean(streamflow))
-#station_yearly_flows <- rbind(station_yearly_flows, mean_flow)
 station_yearly_flows <- read.csv("~/code/ClimateActionR/yearly_flow_scenario.csv")
 station.coords <- read.csv("~/code/ClimateActionR/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
