@@ -13,5 +13,5 @@ library(rdrop2)
 download.file("https://s3.amazonaws.com/GapFTP/NAT_LC/Regions/GRID/gaplc_swest.zip",
               destfile="GAP_vegcov_SW.zip",mode="wb")
 
-drop_upload("GAP_vegcov_SW.zip",dest="ClimateActionRData/land use") # unzips to ~1GB!
+drop_upload("GAP_vegcov_SW.zip",dest="ClimateActionRData/land_use") # unzips to ~1GB!
 unlink("GAP_vegcov_SW.zip")
