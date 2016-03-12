@@ -10,8 +10,8 @@ library(rdrop2)
 #################################################-
 ## Download data, unzip, and upload to Dropbox
 #################################################-
-download.file("https://s3.amazonaws.com/GapFTP/NAT_LC/State/IMG/gaplandcov_ca.zip",
-              destfile="GAP_vegcov_CA.zip",mode="wb")
+download.file("https://s3.amazonaws.com/GapFTP/NAT_LC/Regions/GRID/gaplc_swest.zip",
+              destfile="GAP_vegcov_SW.zip",mode="wb")
 
-drop_upload("GAP_vegcov_CA.zip",dest="ClimateActionRData") # unzips to ~1GB!
-unlink("GAP_vegcov_CA.zip")
+drop_upload("GAP_vegcov_SW.zip",dest="ClimateActionRData/land use") # unzips to ~1GB!
+unlink("GAP_vegcov_SW.zip")
