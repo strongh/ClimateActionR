@@ -20,7 +20,7 @@ Please follow the installation instructions posted here: https://github.com/stro
 | :--------- | :--------------------------------------------------------------- | :------------------------- |
 | 9:00-9:30 | Welcome and introduction to the workshop | Steve Allison |
 | 9:30-10:00 | Data science approaches to multidisciplinary problems + discussion | Padhraic Smyth |
-| 10:00-10:30 | Presentation of questions and available datasets + team formation | Homer Strong, Will Petry |
+| 10:00-10:30 | Presentation of questions, datasets, milestones, and team formation | Homer Strong, Will Petry |
 | 10:30-10:45 | Break | |
 | 10:45-12:00 | Data wrangling in R -- Data I/O + dplyr | Will Petry |
 | 12:00-1:00 | Lunch | |
