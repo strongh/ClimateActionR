@@ -48,8 +48,8 @@ Please follow the installation instructions posted here: https://github.com/stro
 
 | Time | Module | Presenter(s) |
 | :--------- | :--------------------------------------------------------------- | :------------------------- |
-| 9:00-10:00 | Project work time | |
-| 10:00-12:00 | Group demos of Shiny app products | |
+| 9:00-10:30 | Project finalization and demo preparation | |
+| 10:30-12:00 | Group demos of Shiny app products | |
 | 12:00 | Closing remarks + adjorn | |
 
 [GRC]: http://www.grad.uci.edu/_assets/pdfs/GRC%20Map%20-%20Gateway%20Study%20Center.pdf "Map to Graduate Resource Center"
