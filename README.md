@@ -23,6 +23,13 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 
 # Data domains
 
+## Agriculture
+| Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
+| -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
+| CA_crops_{YYYY}.tif | USDA crop cover | Raster | Aerial image analysis | 2007-2014 | Annual | California | 30 m | https://catalog.data.gov/dataset/cropscape-cropland-data-layer |
+| usda_plants.csv | USDA PLANTS | Tabular | N/A | N/A | N/A | SW USA | N/A | http://plants.usda.gov/adv_search.html |
+| irrigated_area.csv | USGS water use irrigated land by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
+
 ## Climate
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
@@ -46,11 +53,8 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 ## Land use
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
-| GAP_landcover_CA.img | USGS GAP vegetation cover of California | Raster | Aerial image analysis | 1999-2001 | N/A | California | 30 m | http://gapanalysis.usgs.gov/gaplandcover/data/ |
-| irrigated_area.csv | USGS water use irrigated land by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
+| GAP_landcover_SW.grd | USGS GAP vegetation cover of southwest United States | Raster | Aerial image analysis | 1999-2001 | N/A | CO, UT, NV, AZ, NM, CA | 30 m | http://gapanalysis.usgs.gov/gaplandcover/data/ |
 | water_withdrawals.csv | USGS water use by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
-| CA_crops_{YYYY}.tif | USDA crop cover | Raster | Aerial image analysis | 2007-2014 | Annual | California | 30 m | https://catalog.data.gov/dataset/cropscape-cropland-data-layer |
-| usda_plants.csv | USDA PLANTS | Tabular | N/A | N/A | N/A | SW USA | N/A | http://plants.usda.gov/adv_search.html |
 
 # Utility data
 
