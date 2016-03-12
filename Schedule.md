@@ -28,7 +28,7 @@ Please follow the installation instructions posted here: https://github.com/stro
 | 2:00-2:15 | Break | |
 | 2:15-3:30 | Communicating outcomes with Shiny and maps | Homer Strong |
 | 3:30-5:00 | Project work time | |
-| 5:00 | Adjorn | |
+| 5:00 | Adjourn | |
 
 # Day 2 -- Tuesday March 15
 **Location: [Graduate Resource Center event room][GRC]**
@@ -41,7 +41,7 @@ Please follow the installation instructions posted here: https://github.com/stro
 | 1:00-2:30 | Project work time | |
 | 2:30-2:45 | Break | |
 | 2:45-5:00 | Project work time | |
-| 5:00 | Adjorn | |
+| 5:00 | Adjourn | |
 
 # Day 3 -- Wednesday March 16
 **Location: [Graduate Resource Center event room][GRC]**
@@ -50,6 +50,6 @@ Please follow the installation instructions posted here: https://github.com/stro
 | :--------- | :--------------------------------------------------------------- | :------------------------- |
 | 9:00-10:30 | Project finalization and demo preparation | |
 | 10:30-12:00 | Group demos of Shiny app products | |
-| 12:00 | Closing remarks + adjorn | |
+| 12:00 | Closing remarks + adjourn | |
 
 [GRC]: http://www.grad.uci.edu/_assets/pdfs/GRC%20Map%20-%20Gateway%20Study%20Center.pdf "Map to Graduate Resource Center"
