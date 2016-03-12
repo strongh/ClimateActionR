@@ -47,7 +47,7 @@ shinyUI(fluidPage(
        tabPanel("Mexico Flow",
                 plotOutput("mexicoFlowTimeSeriesPlot"),
                 textOutput("waterTreatySummary")),
-       tabPanel("Total Flow",
+       tabPanel("Inflow",
                 plotOutput("flowTimeSeriesPlot")),
        tabPanel("Map",
                 plotOutput("stationMap", height="7in"))

@@ -4,6 +4,20 @@ library(magrittr)
 library(plyr)
 library(dplyr)
 
+## TODO:
+## + make sure apps run from scratch
+## + break out data preparation script(s)
+## + point out how to explain w/ prose
+## + improve graph labels
+## + plug in actual numbers?
+## + do something fancier with map
+## + add units
+## + clarify when dam should start
+## + bug in years reported?
+## + "pad" should be more emphasized / radio buttons
+## + states polygon
+
+
 # Define server logic required to draw a histogram
 ## flow_data <- read.csv("~/code/ClimateActionR/CMIP5_streamflow.csv") 
 
@@ -26,6 +40,8 @@ theme_set(theme_minimal())
 #states <- geom_shape("admin_boundaries", "state_boundaries")
 US.use <- 3e5 # i just made this up
 mexico.use <- 2e5 # and this too
+
+
 shinyServer(function(input, output) {
   mexicoWaterReactive <- reactive({
     store.rate <- input$damStorageRate
@@ -75,7 +91,7 @@ shinyServer(function(input, output) {
     prop.years.fail <- sum(mexico.flow < mexico.use)/N
     sprintf("In %.2f%% of years between 1950 and 2100, there is
             not enough water
-            remaining for Mexio.",
+            remaining for Mexico.",
             prop.years.fail * 100)
   })
   
