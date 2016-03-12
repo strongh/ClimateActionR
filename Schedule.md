@@ -57,7 +57,7 @@ If you have never used R and RStudio, please come to our pre-workshop office hou
 # Milestones
 | Milestone | Description |
 | --------- | ----------- |
-| 1 -- Select question & datasets | Choose a project question and identify the relevant datasets |
+| 1 -- Select question & datasets | Choose a [project question][quest] and identify the [relevant datasets][data] |
 | 2 -- Plan & assign tasks | Identify component tasks to answer question, plan analyses, and assign roles to group members |
 | 3 -- Preliminary analysis & reflection | Complete preliminary analyses (e.g. summary statistics) and evaluate data suitability |
 | 4 -- Background research | Relate analyses to previous research on the topic (e.g. what has been found, how has it been communicated?) |
@@ -69,3 +69,5 @@ If you have never used R and RStudio, please come to our pre-workshop office hou
 
 
 [GRC]: http://www.grad.uci.edu/_assets/pdfs/GRC%20Map%20-%20Gateway%20Study%20Center.pdf "Map to Graduate Resource Center"
+[quest]: https://github.com/strongh/ClimateActionR/blob/master/Questions.md "CAT Workshop questions"
+[data]: https://github.com/strongh/ClimateActionR/blob/master/README.md "CAT Workshop datasets"
