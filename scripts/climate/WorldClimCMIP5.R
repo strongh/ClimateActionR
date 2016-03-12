@@ -37,8 +37,7 @@ mapply(dwnldfxn,aurl=urls,filename=zipfile)
 ###########################################################
 ## Subset files
 ###########################################################
-dir<-"~/Desktop/WorldClim"
-zfs<-list.files(dir,pattern="zip",full.names=T)
+zfs<-list.files(path,pattern="zip",full.names=T)
 
 # Check that all files were downloaded
 counts<-c(2,4,4,1,3,3,3,4,4,2,4,2,4,4,4,4,3,4,4)*3*2
@@ -50,7 +49,7 @@ table(substr(zfs,1,2))
 cat.bbox<-bbox(matrix(c(-124,-104,31,42),nrow=2,byrow=F))
 
 for(i in zfs){
-  unzip(i,exdir=dir)  # unzip file
+  unzip(i,exdir=path)  # unzip file
   unlink(i)  # remove zip file
   patt<-substr(i,nchar(i)-12+1,nchar(i)-4)
   gtifs<-list.files(dir,pattern=patt,full.names=T)[c(1,5:12,2,3,4)]  # get tif filenames + reorder files to correct sequence of months
@@ -60,5 +59,11 @@ for(i in zfs){
   unlink(gtifs)
   print(paste0("Finished with file ",patt," (",which(zfs==i)," out of ",length(zfs),")"))
 }
+
+## No data upload step for these -- handled manually
+
+
+
+
 
 
