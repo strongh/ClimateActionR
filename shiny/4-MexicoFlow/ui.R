@@ -19,7 +19,8 @@ shinyUI(fluidPage(
        p("In the third iteration we add a dam, just downstream
        of the gauge, whose behavior is
        controlled by 2 inputs. The inputs are the maximum capacity
-       and the percent of inflow kept. How do these
+       and the percent of inflow kept. The dam is assumed to be constructed in 1950
+       and starts off empty. How do these
        parameters affect Mexico's water?"),
        p("For version 4 we add a drop down menu to select
          different future climate scenarios."),

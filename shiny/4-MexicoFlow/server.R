@@ -4,26 +4,26 @@ library(magrittr)
 library(dplyr)
 
 ## TODO:
-## + make sure apps run from scratch
+## + make sure apps run from scratch (states polygon)
 ## + point out how to explain w/ prose
-## + improve graph labels
 ## + plug in actual numbers?
 ## + do something fancier with map
 ## + add units
-## + clarify when dam should start
-## + bug in years reported?
-## + "pad" should be more emphasized / radio buttons
-## + states polygon
+
 ## + version 5: long-term vs short term
+## + improve graph labels
+## + "pad" should be more emphasized / radio buttons
 
 ## DONE:
 ## + break out data preparation script(s)
-
-
+## + clarify when dam should start
+## + bug in years reported?
 station_yearly_flows <- read.csv("~/code/ClimateActionR/yearly_flow_scenario.csv")
 station.coords <- read.csv("~/code/ClimateActionR/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
 #states <- geom_shape("admin_boundaries", "state_boundaries")
+
+## should use source: https://en.wikipedia.org/wiki/Colorado_River_Compact
 US.use <- 3e5 # i just made this up
 mexico.use <- 2e5 # and this too
 
@@ -35,13 +35,14 @@ shinyServer(function(input, output) {
     pad <- input$generous
     inflow <- station_yearly_flows %>% 
       filter(Scenario==input$scenario) %>%
-      select(streamflow) %>% .[[1]]
+      dplyr::select(streamflow) %>% .[[1]]
 
     N <- length(inflow)
     ## calculate outflow at each time point
     outflow <- c(0)
+    ## Note: we need to keep track of dam level, even though we don't present it
     damLevel <- c(0) # start with no water. new dam.
-    for (year in 2:N){
+    for (year in 2:N){ 
       last.year <- year - 1
       store <- store.rate * inflow[year]
       ## check whether there is enough remaining capacity
@@ -73,7 +74,7 @@ shinyServer(function(input, output) {
   
   output$waterTreatySummary <- renderText({
     mexico.flow <- mexicoWaterReactive()
-    N <- nrow(station_yearly_flows)
+    N <- nrow(station_yearly_flows %>% filter(Scenario==input$scenario))
     prop.years.fail <- sum(mexico.flow < mexico.use)/N
     sprintf("In %.2f%% of years between 1950 and 2100, there is
             not enough water
@@ -95,7 +96,7 @@ shinyServer(function(input, output) {
     scenario <- input$scenario
     ggplot(station_yearly_flows %>% filter(Scenario==scenario), 
            aes(Year, outflow)) + 
-      geom_line() + 
+      geom_line() +
       geom_point(aes(colour=outflow>=mexico.use)) +
       geom_hline(yintercept = mexico.use)
   })
