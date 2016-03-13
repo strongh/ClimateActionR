@@ -2,42 +2,39 @@ library(shiny)
 library(ggplot2)
 library(magrittr)
 library(dplyr)
-
-## TODO:
-## + make sure apps run from scratch (states polygon)
-## + point out how to explain w/ prose
-## + plug in actual numbers?
-## + do something fancier with map
-## + add units
+library(ClimateAction)
 
 ## + version 5: long-term vs short term
-## + improve graph labels
+## + improve graph labels w/ units
 ## + "pad" should be more emphasized / radio buttons
+## + do something fancier with map
 
-## DONE:
-## + break out data preparation script(s)
-## + clarify when dam should start
-## + bug in years reported?
-station_yearly_flows <- read.csv("~/catdata/yearly_flow_scenario.csv")
+
+station_yearly_flows <- read.csv("~/catdata/station_yearly_flows.csv")
 station.coords <- read.csv("~/catdata/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
-#states <- geom_shape("admin_boundaries", "state_boundaries")
+state_shapes <- read.csv("~/catdata/state_shapes.csv")
+states <- geom_path(data=state_shapes,
+                    aes(group=group))
 
-## should use source: https://en.wikipedia.org/wiki/Colorado_River_Compact
-US.use <- 293 * 3.2804^3 # 3e5 # i just made this up
-mexico.use <- US.use /5 # 2e5 # and this too
-
+# 200000000 * 3.2804^3 = 7,060,092,731: size of imperial reservoir in cf.
+## source: https://en.wikipedia.org/wiki/Colorado_River_Compact
+US.use <- 293 * 3.2804^3
+mexico.use <- US.use / 5
+min.percent.target <- 0.2
 
 shinyServer(function(input, output) {
   mexicoWaterReactive <- reactive({
     store.rate <- input$damStorageRate
     damSize <- input$damSize
-    pad <- input$generous
+    pad <- input$share
+  
+
     inflow <- station_yearly_flows %>% 
       filter(Scenario==input$scenario) %>%
-      mutate(streamflow=streamflow*0.1) %>%
+      mutate(streamflow=pmax(0, streamflow/2-US.use)) %>%
       dplyr::select(streamflow) %>% .[[1]]
-
+  
     N <- length(inflow)
     ## calculate outflow at each time point
     outflow <- c(0)
@@ -47,6 +44,7 @@ shinyServer(function(input, output) {
       last.year <- year - 1
       store <- store.rate * inflow[year]
       ## check whether there is enough remaining capacity
+
       if (damLevel[last.year] + store < damSize){
         damLevel[year] <- damLevel[last.year] + store
         outflow[year] <- inflow[year] - store
@@ -58,8 +56,9 @@ shinyServer(function(input, output) {
         ## if we are at more than 20% of capacity
         ## and mexico needs more water, send some more water
         ## but always keep at least 20% for ourselves
-        if (damLevel[year] > 0.2*damSize & outflow[year] < mexico.use) {
-          padding <- min(damLevel[year] - 0.2*damSize, mexico.use - outflow[year])
+        if (damLevel[year] > min.percent.target*damSize & outflow[year] < mexico.use) {
+          padding <- min(damLevel[year] - min.percent.target*damSize,
+                         mexico.use - outflow[year])
           outflow[year] <- outflow[year] + padding
           damLevel[year] <- damLevel[year] - padding
         }

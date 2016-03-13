@@ -27,7 +27,7 @@ write.csv(station_flows, "~/catdata/flow_data.csv", row.names = FALSE)
 ## summarise monthly counts into yearly
 station_yearly_flows <- station_flows %>%
   group_by(Year, Scenario) %>%
-  summarise(streamflow=sum(streamflow))
+  summarise(streamflow=mean(streamflow))
 
 ## calculate flows under the "mean" scenario
 mean_flow <- station_yearly_flows %>%
@@ -39,7 +39,7 @@ station_yearly_flows <- rbind(station_yearly_flows, mean_flow)
 
 ## write to CSV
 write.csv(station_yearly_flows,
-          "~/catdata/yearly_flow_scenario.csv", row.names = FALSE)
+          "~/catdata/station_yearly_flows.csv", row.names = FALSE)
 
 ## finally, get coordinates of gauges for the map.
 station_coordinates <- flow_data %>% 
@@ -50,3 +50,8 @@ station_coordinates <- flow_data %>%
 ## write coordinates to CSV
 write.csv(station_coordinates,
           "~/catdata/station_coords.csv", row.names = FALSE)
+
+## write shapes as CSV
+state_shapes <- shape.df("admin_boundaries", "state_boundaries")
+write.csv(state_shapes, "~/catdata/state_shapes.csv", row.names = FALSE)
+
