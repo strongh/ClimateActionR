@@ -16,10 +16,11 @@
 ## Data wrangling (dplyr & tidyr)
 * RStudio cheatsheet: https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf
 
+
 ## Spatial data
 * Spatial data cheatsheet: http://www.maths.lancs.ac.uk/~rowlings/Teaching/UseR2012/cheatsheet.html
 * Making maps with ggplot2: http://zevross.com/blog/2014/07/16/mapping-in-r-using-the-ggplot2-package/
 
 
 ## Interactive web applications (shiny)
-* http://shiny.rstudio.com/images/shiny-cheatsheet.pdf
+* RStudio cheatsheet: http://shiny.rstudio.com/images/shiny-cheatsheet.pdf
