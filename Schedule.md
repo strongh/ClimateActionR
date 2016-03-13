@@ -52,7 +52,7 @@ If you have never used R and RStudio, please come to our pre-workshop office hou
 | :--------- | :--------------------------------------------------------------- | :------------------------- |
 | 9:00-10:30 | Project finalization and demo preparation | Finish project |
 | 10:30-12:00 | Group demos of Shiny app products | |
-| 12:00 | Closing remarks + adjourn | |
+| 12:00 | Closing remarks + adjourn | [feedback survey][survey] |
 
 # Milestones
 | Milestone | Description |
@@ -71,3 +71,4 @@ If you have never used R and RStudio, please come to our pre-workshop office hou
 [GRC]: http://www.grad.uci.edu/_assets/pdfs/GRC%20Map%20-%20Gateway%20Study%20Center.pdf "Map to Graduate Resource Center"
 [quest]: https://github.com/strongh/ClimateActionR/blob/master/Questions.md "CAT Workshop questions"
 [data]: https://github.com/strongh/ClimateActionR/blob/master/README.md "CAT Workshop datasets"
+[survey]: http://goo.gl/forms/kcQ9riO3jp "CAT Workshop feedback survey"
