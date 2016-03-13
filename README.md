@@ -30,11 +30,15 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 | usda_plants.csv | USDA PLANTS | Tabular | N/A | N/A | N/A | SW USA | N/A | http://plants.usda.gov/adv_search.html |
 | irrigated_area.csv | USGS water use irrigated land by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
 
+
 ## Climate
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | PRISM_temperature_normals.csv | Spatial temperature norms | Raster | PRISM | 1981-2010 | monthly | SW USA  | 4km grid squares | http://www.prism.oregonstate.edu/normals/ |
 | normal_min_temperatures.csv | Mean min temperatures, plus USDA hardiness zones | Raster | PRISM | 1981-2010 | N/A | contiguous USA | 4km grid squares | http://www.prism.oregonstate.edu/normals/ |
+| WorldClimCMIP5.zip | Projections of temperature (min/max) and precipitation  | Raster | CMIP5 | 2050 & 2070 normals | monthly | SW USA  | 2.5 arc-minute | http://www.worldclim.org/CMIP5_2.5m/ |
+| palmerDI_{regions/timeseries} | Historical Palmer's drought index | Shapefile & table | CMIP5 | 1895-2016 (Feb.) | monthly | SW USA  | 2.5 arc-minute | http://www1.ncdc.noaa.gov/pub/data/cirs/climdiv/ |
+
 
 ## Hydrology
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
@@ -50,11 +54,13 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | ca_pop_projections.csv | Human population projections statewide & by county | Table | Demographic projection | 2010-2060 | Yearly | California | County | http://www.dof.ca.gov/research/demographic/reports/projections/ |
 
+
 ## Land use
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | GAP_landcover_SW.grd | USGS GAP vegetation cover of southwest United States | Raster | Aerial image analysis | 1999-2001 | N/A | CO, UT, NV, AZ, NM, CA | 30 m | http://gapanalysis.usgs.gov/gaplandcover/data/ |
 | water_withdrawals.csv | USGS water use by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
+
 
 # Utility data
 
