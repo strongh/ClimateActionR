@@ -18,14 +18,14 @@ library(dplyr)
 ## + break out data preparation script(s)
 ## + clarify when dam should start
 ## + bug in years reported?
-station_yearly_flows <- read.csv("~/code/ClimateActionR/yearly_flow_scenario.csv")
-station.coords <- read.csv("~/code/ClimateActionR/station_coords.csv") # unique(flow_data[, c("long", "lat")])
+station_yearly_flows <- read.csv("~/catdata/yearly_flow_scenario.csv")
+station.coords <- read.csv("~/catdata/ClimateActionR/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
 #states <- geom_shape("admin_boundaries", "state_boundaries")
 
 ## should use source: https://en.wikipedia.org/wiki/Colorado_River_Compact
-US.use <- 3e5 # i just made this up
-mexico.use <- 2e5 # and this too
+US.use <- 293 * 3.2804^3 # 3e5 # i just made this up
+mexico.use <- US.use /5 # 2e5 # and this too
 
 
 shinyServer(function(input, output) {
@@ -35,6 +35,7 @@ shinyServer(function(input, output) {
     pad <- input$generous
     inflow <- station_yearly_flows %>% 
       filter(Scenario==input$scenario) %>%
+      mutate(streamflow=streamflow*0.1) %>%
       dplyr::select(streamflow) %>% .[[1]]
 
     N <- length(inflow)

@@ -7,7 +7,7 @@ write.csv(rdrop2::drop_read_csv("/ClimateActionRData/CMIP5_streamflow.csv"),
           file="CMIP5_streamflow.csv")
 
 ## read the data that we just downloaded.
-flow_data <- read.csv("~/code/ClimateActionR/CMIP5_streamflow.csv") 
+flow_data <- read.csv("~/catdata/ClimateActionR/CMIP5_streamflow.csv") 
 
 ## Compute the smaller CSVs that we need for Shiny.
 ## + filter to a single GCM (as a simplifying assumption)
@@ -22,7 +22,7 @@ station_flows <- flow_data %>%
   filter(Station == "IMPRL", GCM=="bcc.csm1.1")
 
 ## write out this product to CSV
-write.csv(station_flows, "~/code/ClimateActionR/flow_data.csv", row.names = FALSE)
+write.csv(station_flows, "~/catdata/flow_data.csv", row.names = FALSE)
 
 ## summarise monthly counts into yearly
 station_yearly_flows <- station_flows %>%
@@ -39,7 +39,7 @@ station_yearly_flows <- rbind(station_yearly_flows, mean_flow)
 
 ## write to CSV
 write.csv(station_yearly_flows,
-          "~/code/ClimateActionR/yearly_flow_scenario.csv", row.names = FALSE)
+          "~/catdata/yearly_flow_scenario.csv", row.names = FALSE)
 
 ## finally, get coordinates of gauges for the map.
 station_coordinates <- flow_data %>% 
@@ -49,4 +49,4 @@ station_coordinates <- flow_data %>%
 
 ## write coordinates to CSV
 write.csv(station_coordinates,
-          "~/code/ClimateActionR/station_coords.csv", row.names = FALSE)
+          "~/catdata/station_coords.csv", row.names = FALSE)
