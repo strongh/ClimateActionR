@@ -61,5 +61,3 @@ shiny_viewer <- function() {
     }
   )
 }
-
-shiny_viewer()

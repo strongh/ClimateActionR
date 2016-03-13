@@ -11,7 +11,10 @@ Imports:
     magrittr,
     shiny,
     rdrop2,
-    ggplot2
+    ggplot2,
+    rgdal,
+    rgeos,
+    maptools
 License: What license is it under?
 LazyData: true
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 5.0.1

@@ -11,15 +11,16 @@
 #' @examples
 #' shape.df("basin_boundary", "CRBasin_lower")
 shape.df <- function(dir, shape.name) {
+  require(magrittr)
   shp.suffixes <- c("shp", "dbf", "shx", "prj")
   for (f in shp.suffixes)
-    drop_get(paste0("ClimateActionRData/", dir, "/", shape.name, ".", f), overwrite=TRUE)
-  
-  shape.name <- readOGR(dsn=".", layer=shape.name)
+    rdrop2::drop_get(paste0("ClimateActionRData/", dir, "/", shape.name, ".", f), overwrite=TRUE)
+
+  shape.name <- rgdal::readOGR(dsn=".", layer=shape.name)
   shape.name@data$id <- rownames(shape.name@data)
-  shape.name.points <- fortify(shape.name, region="id")
-  shape.name.df <- join(shape.name.points, shape.name@data, by="id")
-  shape.name.df %>% rename(lon=long)
+  shape.name.points <- ggplot2::fortify(shape.name, region="id")
+  shape.name.df <- dplyr::left_join(shape.name.points, shape.name@data, by="id")
+  shape.name.df #%>% dplyr::rename(long=lon)
 }
 
 #' Create a ggplot geom of shapefiles
@@ -33,6 +34,7 @@ shape.df <- function(dir, shape.name) {
 #' example.data <- drop_read_csv("/ClimateActionRData/PRISM_temperature_normals.csv")
 #' ggplot(example.data, aes(lon, lat)) + geom_raster(aes(fill = value)) + geom_shape("basin_boundary", "CRBasin_full")
 geom_shape <- function(dir, shape.name) {
+  require(ggplot2)
   shape.data <- shape.df(dir, shape.name)
   geom_path(data=shape.data, aes(group=group))
 }
