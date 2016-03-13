@@ -19,7 +19,7 @@ library(dplyr)
 ## + clarify when dam should start
 ## + bug in years reported?
 station_yearly_flows <- read.csv("~/catdata/yearly_flow_scenario.csv")
-station.coords <- read.csv("~/catdata/ClimateActionR/station_coords.csv") # unique(flow_data[, c("long", "lat")])
+station.coords <- read.csv("~/catdata/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
 #states <- geom_shape("admin_boundaries", "state_boundaries")
 

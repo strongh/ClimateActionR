@@ -44,7 +44,7 @@ write.csv(station_yearly_flows,
 ## finally, get coordinates of gauges for the map.
 station_coordinates <- flow_data %>% 
   group_by(Station) %>%
-  select(lat, long) %>%
+  dplyr::select(lat, long) %>%
   distinct(Station)
 
 ## write coordinates to CSV
