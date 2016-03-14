@@ -40,7 +40,7 @@ shinyUI(fluidPage(
        radioButtons("share",
                     "Share surplus?",
                     c("Yes"=TRUE, "No"=FALSE),
-                    selected = FALSE),
+                    selected = character(0)),
        selectInput("scenario", "Climate scenario",
                    c("rcp26", "rcp45", "rcp60", "rcp85", "mean"))
     ),

@@ -4,9 +4,6 @@ library(magrittr)
 library(dplyr)
 library(ClimateAction)
 
-## + version 5:
-## + do something fancier with map
-
 
 station_yearly_flows <- read.csv("~/catdata/station_yearly_flows.csv")
 station.coords <- read.csv("~/catdata/station_coords.csv") # unique(flow_data[, c("long", "lat")])
