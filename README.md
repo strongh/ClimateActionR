@@ -20,7 +20,7 @@ Installing the `ClimateAction` R package and running the `prepare_shiny_data.R` 
 ```r
 install.packages("devtools")
 devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
-source("shiny/prepare_shiny_data.R")
+source("shiny/prepare_shiny_data.R") # this may take a minute
 shiny::runApp("shiny/1-MexicoFlow/") # and likewise for other apps
 ```
 

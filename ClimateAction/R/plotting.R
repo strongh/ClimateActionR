@@ -17,8 +17,11 @@ shape.df <- function(dir, shape.name, fetch.dropbox=FALSE) {
     print("Downloading from DropBox...")
     for (f in shp.suffixes)
       rdrop2::drop_get(paste0("ClimateActionRData/", dir, "/", shape.name, ".", f), overwrite=TRUE)
+  } else {
+    print("Looking for shapefiles in local ~/catdata")
   }
-  shape.name <- rgdal::readOGR(dsn="~/catdata/utility", layer=shape.name)
+  system(paste0("cp ", "~/catdata/utility/state_boundaries", "* ."))
+  shape.name <- rgdal::readOGR(dsn=".", layer=shape.name)
   shape.name@data$id <- rownames(shape.name@data)
   shape.name.points <- ggplot2::fortify(shape.name, region="id")
   shape.name.df <- dplyr::left_join(shape.name.points, shape.name@data, by="id")
