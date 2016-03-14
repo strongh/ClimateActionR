@@ -5,6 +5,7 @@
 * Learn X in Y minutes (for programmers new to R): https://learnxinyminutes.com/docs/r/
 * QuickR general worked examples (including common statistical analyses): http://www.statmethods.net/index.html
 * Intro to R notes & excercises: http://grad.bio.uci.edu/ecoevo/petryw/CEB_Intro_to_R.html
+* Common error messages explained: https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md
 
 
 ## Plotting (ggplot2)
