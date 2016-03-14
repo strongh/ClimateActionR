@@ -12,8 +12,8 @@ state_shapes <- read.csv("~/catdata/state_shapes.csv")
 states <- geom_path(data=state_shapes,
                     aes(group=group))
 
-US.use <- 1e4 # i just made this up
-mexico.use <- 2e4
+US.use <- 1e4 # i made this up
+mexico.use <- 2e4 # and this
 
 shinyServer(function(input, output) {
   

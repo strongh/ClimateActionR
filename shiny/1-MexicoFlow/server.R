@@ -1,6 +1,11 @@
 library(shiny)
+library(ggplot2)
+library(magrittr)
+library(dplyr)
 
-station_yearly_flows <- read.csv("~/catdata/station_yearly_flows.csv")
+station_yearly_flows <-
+  read.csv("~/catdata/station_yearly_flows.csv") %>% 
+  filter(Scenario=="rcp26")
 station.coords <- read.csv("~/catdata/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
 state_shapes <- read.csv("~/catdata/state_shapes.csv")
