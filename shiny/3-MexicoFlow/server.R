@@ -1,29 +1,22 @@
 library(shiny)
 library(ggplot2)
 
-# Define server logic required to draw a histogram
-#flow_data <- read.csv("~/code/ClimateActionR/CMIP5_streamflow.csv") 
-
-## coords of southernmost station. not sure this is 
-## the right one
-south_station_coords <- c("-114.470", "32.880")
-
-## need to figure out how to coordinate these summary calcs
-## station_flows <- flow_data %>%
-##  filter(lat < 33, Scenario=="rcp26", GCM=="bcc.csm1.1")
-## station_flows <- read.csv("~/code/ClimateActionR/flow_data.csv")
-## station_yearly_flows <- ddply(station_flows, .(Year), summarise, streamflow=sum(streamflow))
-station_yearly_flows <- read.csv("~/code/ClimateActionR/yearly_flow.csv")
-station.coords <- read.csv("~/code/ClimateActionR/station_coords.csv") # unique(flow_data[, c("long", "lat")])
+station_yearly_flows <-
+  read.csv("~/catdata/station_yearly_flows.csv") %>% 
+  filter(Scenario=="rcp26")
+station.coords <- read.csv("~/catdata/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
-#states <- geom_shape("admin_boundaries", "state_boundaries")
+state_shapes <- read.csv("~/catdata/state_shapes.csv")
+states <- geom_path(data=state_shapes,
+                    aes(group=group))
+
 US.use <- 3e5 # i just made this up
-mexico.use <- 2e5 # and this too
+mexico.use <- 2e4 # and this too
 shinyServer(function(input, output) {
   mexicoWaterReactive <- reactive({
     store.rate <- input$damStorageRate
     damSize <- input$damSize
-    pad <- input$generous
+    pad <- input$share
     inflow <- station_yearly_flows$streamflow 
     N <- length(inflow)
     ## calculate outflow at each time point

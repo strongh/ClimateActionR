@@ -1,11 +1,4 @@
-## get data, just needs to be run once
-
-#library(rdrop2)
-#write.csv(rdrop2::drop_read_csv("/ClimateActionRData/CMIP5_streamflow.csv"),
-#          file="CMIP5_streamflow.csv")
-
 library(shiny)
-## Assumes that 
 
 shinyUI(fluidPage(
   # Application title
@@ -32,9 +25,9 @@ shinyUI(fluidPage(
                    min=0, max=1, value=0.5),
        sliderInput("damSize",
                    "Dam size",
-                   min=0, max=1e7, value=1e2),
-       checkboxInput("generous",
-                     "Pad outflow?", value=FALSE)
+                   min=0, max=1e5, value=1e2),
+       checkboxInput("share",
+                     "Share surplus?", value=FALSE)
     ),
     
     # Show a plot of the generated distribution
