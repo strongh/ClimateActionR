@@ -14,11 +14,14 @@
 # R conventions
 File names end in `*.R'.
 
-# Install R package
-The `ClimateAction` R package can be installed using the following command (requires `devtools` to be installed).
+# Running the Shiny apps
+Installing the `ClimateAction` R package and running the `prepare_shiny_data.R` should be enough to run the apps. The code below assumes that the working directory is the root folder of this repo.
 
 ```r
+install.packages("devtools")
 devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
+source("shiny/prepare_shiny_data.R")
+shiny::runApp("shiny/1-MexicoFlow/") # and likewise for other apps
 ```
 
 # Data domains

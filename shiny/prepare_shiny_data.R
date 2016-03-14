@@ -1,13 +1,11 @@
 library(rdrop2)
 library(dplyr)
 library(magrittr)
+library(ClimateAction)
 
-## get raw data from Dropbox (this is a little slow because it's a large-ish CSV).
-write.csv(rdrop2::drop_read_csv("/ClimateActionRData/CMIP5_streamflow.csv"),
-          file="CMIP5_streamflow.csv")
 
-## read the data that we just downloaded.
-flow_data <- read.csv("~/catdata/ClimateActionR/CMIP5_streamflow.csv") 
+## read the data that we already downloaded.
+flow_data <- read.csv("~/catdata/hydrology/CMIP5_streamflow.csv") 
 
 ## Compute the smaller CSVs that we need for Shiny.
 ## + filter to a single GCM (as a simplifying assumption)
@@ -16,6 +14,11 @@ flow_data <- read.csv("~/catdata/ClimateActionR/CMIP5_streamflow.csv")
 ## + add a new "scenario" which is the average of all scenarios.
 ## + extract the coordinates of all locations
 
+## want flow per station per year
+sy <- flow_data %>% group_by(Station, Year) %>% 
+  summarise(mean_flow=mean(streamflow), lat=first(lat), lon=first(long)) %>% 
+  rename(long=lon)
+write.csv(sy, "~/catdata/flow_per_station.csv")
 
 ## first we do the two filtering steps
 station_flows <- flow_data %>%
@@ -54,4 +57,3 @@ write.csv(station_coordinates,
 ## write shapes as CSV
 state_shapes <- shape.df("admin_boundaries", "state_boundaries")
 write.csv(state_shapes, "~/catdata/state_shapes.csv", row.names = FALSE)
-
