@@ -1,5 +1,7 @@
 library(shiny)
 library(ggplot2)
+library(magrittr)
+library(dplyr)
 
 station_yearly_flows <-
   read.csv("~/catdata/station_yearly_flows.csv") %>% 

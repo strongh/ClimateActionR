@@ -1,14 +1,19 @@
 library(shiny)
+library(ggplot2)
+library(magrittr)
+library(dplyr)
 
-station_yearly_flows <- read.csv("~/catdata/station_yearly_flows.csv")
+station_yearly_flows <-
+  read.csv("~/catdata/station_yearly_flows.csv") %>% 
+  filter(Scenario=="rcp26")
 station.coords <- read.csv("~/catdata/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
 state_shapes <- read.csv("~/catdata/state_shapes.csv")
 states <- geom_path(data=state_shapes,
                     aes(group=group))
 
-US.use <- 3e5 # i just made this up
-mexico.use <- 1e5
+US.use <- 1e4 # i just made this up
+mexico.use <- 2e4
 
 shinyServer(function(input, output) {
   
