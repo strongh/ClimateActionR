@@ -1,11 +1,4 @@
-## get data, just needs to be run once
-
-#library(rdrop2)
-#write.csv(rdrop2::drop_read_csv("/ClimateActionRData/CMIP5_streamflow.csv"),
-#          file="CMIP5_streamflow.csv")
-
 library(shiny)
-## Assumes that 
 
 shinyUI(fluidPage(
   # Application title
