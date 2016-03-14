@@ -35,7 +35,7 @@ shinyUI(fluidPage(
                    "Dam storage rate",
                    min=0, max=1, value=0.5),
        sliderInput("damSize",
-                   "Dam size (cubic feet)",
+                   "Dam size (acre feet)",
                    min=0, max=1e5, value=1e3),
        radioButtons("share",
                     "Share surplus?",
