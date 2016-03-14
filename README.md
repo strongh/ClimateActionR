@@ -24,6 +24,7 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 # Data domains
 
 ## Agriculture
+### ZIP download link: https://www.dropbox.com/s/wkajdtrv6xr0e8c/agriculture.zip?dl=0
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | CA_crops_{YYYY}.tif | USDA crop cover | Raster | Aerial image analysis | 2007-2014 | Annual | California | 30 m | https://catalog.data.gov/dataset/cropscape-cropland-data-layer |
@@ -32,6 +33,7 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 
 
 ## Climate
+### ZIP download link: https://www.dropbox.com/s/gmbcd4w7v19b4bc/climate.zip?dl=0
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | PRISM_temperature_normals.csv | Spatial temperature norms | Raster | PRISM | 1981-2010 | monthly | SW USA  | 4km grid squares | http://www.prism.oregonstate.edu/normals/ |
@@ -41,6 +43,7 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 
 
 ## Hydrology
+### ZIP download link: https://www.dropbox.com/s/oirr54cvt4jo0s5/hydrology.zip?dl=0
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | CMIP5_streamflow.csv | Colorado River stream flow projections under multiple climate models/scenarios | Table | Model | 1950-2099 | Monthly | 9 georeferenced stations | N/A | http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/ |
@@ -50,12 +53,14 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 
 
 ## Demography
+### ZIP download link: https://www.dropbox.com/s/av42wo892trg74e/demography.zip?dl=0
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | ca_pop_projections.csv | Human population projections statewide & by county | Table | Demographic projection | 2010-2060 | Yearly | California | County | http://www.dof.ca.gov/research/demographic/reports/projections/ |
 
 
 ## Land use
+### ZIP download link: https://www.dropbox.com/s/pawsctrpsyun66e/land_use.zip?dl=0
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | GAP_landcover_SW.grd | USGS GAP vegetation cover of southwest United States | Raster | Aerial image analysis | 1999-2001 | N/A | CO, UT, NV, AZ, NM, CA | 30 m | http://gapanalysis.usgs.gov/gaplandcover/data/ |
@@ -63,7 +68,7 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 
 
 # Utility data
-
+### ZIP download link: https://www.dropbox.com/s/nodgg6ckh2ppvja/utility.zip?dl=0
 | Data file name | Short description | Data type | Data generation | Temporal coverage | Temporal Resolution | Spatial coverage | Spatial resolution | Metadata URL |
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | co.ca.wd.{shp} | Boundaries of Colorado River-using water districts in California | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://datahub.io/dataset/california-water-district-boundaries |
@@ -72,3 +77,6 @@ devtools::install_github("strongh/ClimateActionR", subdir="ClimateAction")
 | CRBasin_lower.{shp} | Boundary of Lower Colorado River Basin | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://www.sciencebase.gov/catalog/item/4fb697b2e4b03ad19d64b47f |
 | state_boundaries.{shp} | Boundaries of US states | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://www.census.gov/geo/maps-data/data/tiger-line.html |
 | county_boundaries.{shp} | Boundaries of US counties and equivalents | Shapefile | Administrative | N/A | N/A | N/A | N/A | https://www.census.gov/geo/maps-data/data/tiger-line.html |
+
+
+Individual files available for manual download at: https://www.dropbox.com/sh/o5ntlzewz5ud60t/AACLrOJ1nWGbLmkLOXLyZ4wia?dl=0
