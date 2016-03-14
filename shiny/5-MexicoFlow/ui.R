@@ -1,3 +1,4 @@
+s
 library(shiny)
 ## Assumes that 
 
@@ -39,8 +40,7 @@ shinyUI(fluidPage(
                    min=0, max=1e5, value=1e3),
        radioButtons("share",
                     "Share surplus?",
-                    c("Yes"=TRUE, "No"=FALSE),
-                    selected = character(0)),
+                    c("Yes"=TRUE, "No"=FALSE)),
        selectInput("scenario", "Climate scenario",
                    c("rcp26", "rcp45", "rcp60", "rcp85", "mean"))
     ),
