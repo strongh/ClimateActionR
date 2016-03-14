@@ -20,6 +20,7 @@ R> install.packages("PackageName", dependencies = TRUE)
 
 **Before the workshop begins, please install the following packages. See below for example command.**
 * ggplot2
+* rgdal
 * raster
 * dplyr
 * tidyr
