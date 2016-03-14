@@ -1,5 +1,5 @@
 library(shiny)
-## Assumes that 
+
 
 shinyUI(fluidPage(
   # Application title

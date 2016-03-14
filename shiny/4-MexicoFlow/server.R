@@ -4,12 +4,6 @@ library(magrittr)
 library(dplyr)
 library(ClimateAction)
 
-## + version 5: long-term vs short term
-## + improve graph labels w/ units
-## + "pad" should be more emphasized / radio buttons
-## + do something fancier with map
-
-
 station_yearly_flows <- read.csv("~/catdata/station_yearly_flows.csv")
 station.coords <- read.csv("~/catdata/station_coords.csv") # unique(flow_data[, c("long", "lat")])
 theme_set(theme_minimal())
