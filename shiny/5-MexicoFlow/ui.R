@@ -1,4 +1,3 @@
-s
 library(shiny)
 ## Assumes that 
 
