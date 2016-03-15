@@ -20,8 +20,9 @@ shape.df <- function(dir, shape.name, fetch.dropbox=FALSE) {
   } else {
     print("Looking for shapefiles in local ~/catdata")
   }
-  system(paste0("cp ", "~/catdata/utility/state_boundaries", "* ."))
-  shape.name <- rgdal::readOGR(dsn=".", layer=shape.name)
+  shape.name <- rgdal::readOGR(
+    dsn=path.expand("~/catdata/utility/"),
+    layer=shape.name)
   shape.name@data$id <- rownames(shape.name@data)
   shape.name.points <- ggplot2::fortify(shape.name, region="id")
   shape.name.df <- dplyr::left_join(shape.name.points, shape.name@data, by="id")
