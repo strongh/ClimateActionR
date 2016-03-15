@@ -10,8 +10,9 @@
 #' @export
 #' @examples
 #' shape.df("basin_boundary", "CRBasin_lower")
-shape.df <- function(dir, shape.name, fetch.dropbox=FALSE) {
+shape.df <- function(dir, shape.name, fetch.dropbox=FALSE, debug=FALSE) {
   require(magrittr)
+  require(maptools)
   shp.suffixes <- c("shp", "dbf", "shx", "prj")
   if (fetch.dropbox){
     print("Downloading from DropBox...")
@@ -19,9 +20,10 @@ shape.df <- function(dir, shape.name, fetch.dropbox=FALSE) {
       rdrop2::drop_get(paste0("ClimateActionRData/", dir, "/", shape.name, ".", f), overwrite=TRUE)
   } else {
     print("Looking for shapefiles in local ~/catdata")
+    print(path.expand("~/catdata/utility"))
   }
   shape.name <- rgdal::readOGR(
-    dsn=path.expand("~/catdata/utility/"),
+    dsn=path.expand("~/catdata/utility"),
     layer=shape.name)
   shape.name@data$id <- rownames(shape.name@data)
   shape.name.points <- ggplot2::fortify(shape.name, region="id")
