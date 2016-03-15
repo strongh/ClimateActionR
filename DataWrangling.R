@@ -171,7 +171,7 @@ recon_timeseries
 ## 4. Wrangling spatial data
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## 4.1 Making a dataframe spatial
-str(proj_flow)  # we had coordinates in this data file, let's map the stations
+View(proj_flow)  # we had coordinates in this data file, let's map the stations
 
 stations <- proj_flow %>%         # clean up data to isolate coordinates only
   select(Station, lat, long) %>%  # can you explain what is happening at each step?
