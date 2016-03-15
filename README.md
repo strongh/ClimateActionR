@@ -69,6 +69,8 @@ shiny::runGitHub( "ClimateActionR", "strongh", subdir="shiny/1-MexicoFlow")
 | -------------- | ----------------- | --------- | --------------- | ----------------- | ------------------- | ---------------- | ------------------ | ------------ |
 | GAP_landcover_SW.grd | USGS GAP vegetation cover of southwest United States | Raster | Aerial image analysis | 1999-2001 | N/A | CO, UT, NV, AZ, NM, CA | 30 m | http://gapanalysis.usgs.gov/gaplandcover/data/ |
 | water_withdrawals.csv | USGS water use by category | Table | Data compilation | 1985-2010 | 5 years | California | County | http://waterdata.usgs.gov/ca/nwis/wu |
+| ca_water_use_monthly.csv | California Water Board water use by district | Table | Data compilation | June 2014-January 2016 | monthly | California | Water district | http://www.waterboards.ca.gov/water_issues/programs/conservation_portal/conservation_reporting.shtml |
+| ca_water_districts.{shp} | California water districts (statewide) | Shapefile | Data compilation | N/A | N/A | California | N/A | http://cehtp.org/page/water/download |
 
 
 # Utility data
