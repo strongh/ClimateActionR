@@ -52,7 +52,7 @@ If you have never used R and RStudio, please come to our pre-workshop office hou
 | :--------- | :--------------------------------------------------------------- | :------------------------- |
 | 9:00-10:30 | Project finalization and demo preparation | Finish project |
 | 10:30-12:00 | Group demos of Shiny app products | |
-| 12:00 | Closing remarks + adjourn | [feedback survey][survey] |
+| 12:00 | Closing remarks + adjourn | [Feedback survey][survey] & [Upload Shiny apps][shiny] (incl. server.R, ui.R, data artifact, R script that generated the data artifact) |
 
 # Milestones
 | Milestone | Description |
@@ -72,3 +72,4 @@ If you have never used R and RStudio, please come to our pre-workshop office hou
 [quest]: https://github.com/strongh/ClimateActionR/blob/master/Questions.md "CAT Workshop questions"
 [data]: https://github.com/strongh/ClimateActionR/blob/master/README.md "CAT Workshop datasets"
 [survey]: http://goo.gl/forms/kcQ9riO3jp "CAT Workshop feedback survey"
+[shiny]: https://drive.google.com/open?id=0BxxFMy6ICoyuYzJzUzEwRlF5a2c
